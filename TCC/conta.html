@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Minha Conta - AngelLips</title>
+  <!-- Importa o CSS específico da página de conta -->
+  <link rel="stylesheet" href="conta.css">
+</head>
+<body>
+  <!-- Container principal da página de conta -->
+  <div class="container">
+    <div class="card">
+      <!-- Abas para alternar entre login e cadastro -->
+      <div class="tabs">
+        <button id="loginTab" class="active" onclick="showTab('login')">Entrar</button>
+        <button id="registerTab" onclick="showTab('register')">Cadastrar</button>
+      </div>
+
+      <!-- Formulário de login -->
+      <div id="loginForm" class="form-section">
+        <h2>Bem-vindo(a) de volta!</h2>
+        <form action="login.php" method="POST">
+          <input type="text" name="usuario" placeholder="Nome de usuário" required>
+          <input type="password" name="senha" placeholder="Senha" required>
+          <button type="submit">Entrar</button>
+        </form>
+      </div>
+
+      <!-- Formulário de cadastro -->
+      <div id="registerForm" class="form-section hidden">
+        <h2>Crie sua conta</h2>
+        <form action="cadastrar.php" method="POST">
+          <input type="text" name="nome" placeholder="Nome completo" required>
+          <input type="text" name="usuario" placeholder="Nome de usuário" required>
+          <input type="email" name="email" placeholder="E-mail" required>
+          <input type="password" name="senha" placeholder="Senha" required>
+          <button type="submit">Cadastrar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- Importa o JavaScript para alternar entre abas de login/cadastro -->
+  <script src="conta.js"></script>
+  <!-- Plugin VLibras para acessibilidade em Libras -->
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    // Inicializa o plugin VLibras
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+</body>
+</html>
