@@ -15,21 +15,44 @@
       background-color: rgba(156, 163, 175, 0.5);
       border-radius: 20px;
     }
+
+    /* Carregar fontes locais (coloque os arquivos em /fonts/) */
+    @font-face {
+      font-family: 'Horizon';
+      src: url('fonts/Horizon-Bold.woff2') format('woff2'),
+           url('fonts/Horizon-Bold.woff') format('woff');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'BagotaLos';
+      src: url('fonts/BagotaLos-Regular.woff2') format('woff2'),
+           url('fonts/BagotaLos-Regular.woff') format('woff');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    /* Aplicar só ao logo "AngelLips" */
+    .logo-font {
+      font-family: 'Horizon', 'BagotaLos', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
   </style>
-</head>
 <body class="bg-white font-sans text-gray-900">
   <!-- Cabeçalho do site com logo e navegação -->
   <header class="flex items-center justify-between px-6 py-4 border-b border-gray-200 sticky top-0 bg-white z-10">
-    <a href="index.html" class="text-2xl font-bold select-none cursor-pointer">AngelLips</a>
+    <a href="index.html" class="text-2xl logo-font select-none cursor-pointer">AngelLips</a>
     <nav class="space-x-8 uppercase text-sm font-semibold tracking-wide">
       <a href="sobre.html" class="hover:text-pink-500 transition-colors duration-300">Sobre</a>
       <a href="produtos.html" class="hover:text-pink-500 transition-colors duration-300">Produtos</a>
       <a href="carrinho.html" class="hover:text-pink-500 transition-colors duration-300">Carrinho</a>
     </nav>
-    <!-- Botão para acessar a conta do usuário -->
     <button aria-label="Conta do usuário" class="hover:text-pink-500 transition-colors duration-300">
       <a href="conta.html" class="flex items-center">
-        <!-- Ícone de usuário -->
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 stroke-current" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M20 21v-2a4 4 0 0 0-3-3.87" />
           <circle cx="12" cy="7" r="4" />
@@ -147,7 +170,7 @@
   </div>
   <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
   <script>
-    // Inicializa o plugin VLibras
+    // Libras
     new window.VLibras.Widget('https://vlibras.gov.br/app');
   </script>
 </body>
